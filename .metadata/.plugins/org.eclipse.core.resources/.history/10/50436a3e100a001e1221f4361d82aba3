@@ -1,0 +1,25 @@
+package com.todo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.todo.entities.ToDo;
+import com.todo.repos.ToDoRepository;
+
+@Service
+public class ToDoServices {
+	
+	@Autowired
+	private ToDoRepository toDoRepository;
+	
+	public ToDo saveToDo(ToDo toDo) {
+//		if(toDoRepository.findById(toDo.getToDoId()).get()!=null) {
+//			return toDoRepository.save(toDo);
+//		}
+		return toDoRepository.save(toDo);
+	}
+	
+//	public ToDo getToDoById(int id) {
+//		
+//	}
+}

@@ -1,0 +1,5 @@
+package com.todo.repos;
+
+public interface ToDoRepository {
+
+}

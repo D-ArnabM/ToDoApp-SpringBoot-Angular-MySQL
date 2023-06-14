@@ -1,0 +1,11 @@
+package com.todo.entities;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class ToDo {
+	private int toDoId;
+	private String toDoTaskHead;
+	private String toDoTaskBody;
+	
+}

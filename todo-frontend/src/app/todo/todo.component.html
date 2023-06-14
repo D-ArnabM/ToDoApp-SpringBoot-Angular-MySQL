@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    <div>
+        <h1>To-Do App</h1>
+        <form>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" [(ngModel)] = "toDoHead" [ngModelOptions]="{standalone: true}" class="form-control" id="toDoTitle" placeholder="Task Title" required="true">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" [(ngModel)] = "toDoBody" [ngModelOptions]="{standalone: true}" class="form-control" id="toDoDesc" placeholder="Task Description" required="true">
+            </div>
+            <button type="submit" class="btn btn-primary mt-4" (click)="save()">Submit</button> 
+            <button type="submit" class="btn  btn-secondary mt-4" (click)="resetFields()">Reset Fields</button> 
+        </form>
+    </div>
+    <div>
+        <div class="container mt-4"></div>
+        <h1>Your To-Do List</h1>
+        <table class="table">
+            <thead>
+                <h1 *ngIf="!isResultLoaded">Loading.....................</h1>
+                <tr>
+                    <th scope="col">Task Title</th>
+                    <th scope="col">Task Desciption</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of ToDoArray">
+                    <td>{{todo.toDoTaskHead}}</td>
+                    <td>{{todo.toDoTaskBody}}</td>
+                    <td>
+                        <button type="button" class="btn btn-success" (click)="setUpdate(todo)">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="setDelete(todo)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
